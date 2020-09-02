@@ -12,6 +12,9 @@
 ### Testing the application
 `docker-compose run project_x mix test`
 
+### Linting the application
+`docker-compose run project_x mix linter`
+
 ### Running the container console
 `docker-compose run project_x /bin/sh`
 
