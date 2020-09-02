@@ -8,4 +8,6 @@ COPY . /project_x
 
 WORKDIR /project_x
 
+RUN mix local.hex --force
+
 RUN mix deps.get
