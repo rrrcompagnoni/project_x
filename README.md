@@ -15,6 +15,9 @@
 ### Linting the application
 `docker-compose run project_x mix linter`
 
+### Formatting the code
+`docker-compose run project_x mix format`
+
 ### Running the container console
 `docker-compose run project_x /bin/sh`
 
