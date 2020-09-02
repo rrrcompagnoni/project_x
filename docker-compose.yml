@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  project_x:
+    image: project_x
+    build: .
+    volumes:
+      - .:/project_x
