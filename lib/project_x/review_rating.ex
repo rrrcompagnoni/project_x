@@ -1,12 +1,21 @@
 defmodule ProjectX.ReviewRating do
+  @enforce_keys :severity
+
   @moduledoc """
-  It represens a review rating present
+  It represents a review rating present
   in any review.
   """
 
-  defstruct severity: 0
+  defstruct severity: nil
 
   @type t :: %__MODULE__{
           severity: integer()
         }
+
+  @spec cast(%{severity: integer}) :: t()
+  def cast(%{severity: severity}) when is_integer(severity) do
+    %__MODULE__{
+      severity: severity
+    }
+  end
 end

@@ -1,5 +1,7 @@
 # ProjectX
 
+Project X will discover the three worst offenders through the average of reviews made. In the case of ties, the most recent reviews take advantage of the precedence.
+
 ## Development setup
 
 ### Requirements
