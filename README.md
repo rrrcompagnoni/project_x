@@ -28,3 +28,11 @@ Project X will discover the three worst offenders through the average of reviews
 After building the application, run:
 
 `docker-compose run project_x mix uncover_worst_offenders`
+
+### Development notes
+- We have to wait for a little when we start the gen server that asks for the most offensive reviewers. The timer does not make me proud and the issue is because Crawly needs some time to do its things. Maybe a more advanced supervision tree could handle it. At this time, I am just a little cowboy with supervisors and I am working to cover it.
+- You may ask yourself that my test suite looks a little bit short. I have followed some principles:
+  - Test the correctness of the requirements.
+  - Skip tests describing simple interfaces close to the core, comply on the spec function attribute.
+  - Everything that is not expected; Let it crash.
+- Advanced environment management would be a nice feature for a production release.
