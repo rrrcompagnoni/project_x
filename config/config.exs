@@ -3,7 +3,7 @@ import Config
 config :logger, level: :warn
 
 config :crawly,
-  closespider_timeout: 3,
+  closespider_timeout: 1,
   concurrent_requests_per_domain: :erlang.system_info(:logical_processors_available),
   middlewares: [
     Crawly.Middlewares.DomainFilter,

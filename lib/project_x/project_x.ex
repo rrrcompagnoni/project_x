@@ -7,12 +7,18 @@ defmodule ProjectX do
 
   @spec uncover_worst_offenders(list(Review.t())) :: list(Review.t())
   def uncover_worst_offenders(reviews) when is_list(reviews) do
-    Enum.sort_by(
-      reviews,
-      &{Review.severity_rating(&1), &1.publish_date},
+    reviews
+    |> Enum.sort_by(
+      &{Review.severity_rating(&1),
+       {&1.publish_date.year, &1.publish_date.month, &1.publish_date.day}},
       :desc
     )
     |> Enum.take(3)
+  end
+
+  @spec review_severity(Review.t()) :: float()
+  def review_severity(%Review{} = review) do
+    Review.severity_rating(review)
   end
 
   @spec cast_review(%{
