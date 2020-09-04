@@ -23,7 +23,11 @@ defmodule ProjectX.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:crawly, "~> 0.1"},
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:floki, "~> 0.26.0"},
+      {:jason, "~> 1.2"},
+      {:timex, "~> 3.5"}
     ]
   end
 
