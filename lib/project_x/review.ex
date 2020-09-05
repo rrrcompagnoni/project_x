@@ -37,13 +37,11 @@ defmodule ProjectX.Review do
   end
 
   @spec severity_rating(t()) :: float()
+  def severity_rating(%__MODULE__{ratings: []}), do: 0
+
   def severity_rating(%__MODULE__{} = review) do
-    Enum.reduce(
-      review.ratings,
-      0,
-      fn rating, acc ->
-        (rating.severity + acc) / length(review.ratings)
-      end
-    )
+    severities = Enum.map(review.ratings, &(&1.severity))
+
+    Enum.sum(severities) / length(severities)
   end
 end
